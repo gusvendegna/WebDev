@@ -1,0 +1,114 @@
+.title {
+	font-size: 200%;
+}
+
+.parent {
+ 	font-family: Helvetica;
+	position: absolute;
+	top: 30vh;
+	width: 60%;
+	left: 20vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.button {
+	appearance: button;
+	backface-visibility: hidden;
+	background-color: #0b2d71;
+	border-radius: 20px;
+	border-width: 1;
+	box-shadow: 0px 1px 6px 1px #0b2d71;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	font-family: Helvetica;
+	font-size: 110%;
+	height: 40px;
+	line-height: 1;
+	margin: 0 0 0;
+	outline: none;
+	overflow: hidden;
+	padding: 0 0;
+ 	position: center;
+	text-align: center;
+	text-transform: none;
+	transform: translateZ(0);
+	transition: all .2, box-shadow  .08s ease-in;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: 100%;
+}	
+
+input {
+	margin-top: 1rem;
+}
+
+input::file-selector-button {
+	font-weight: bold;
+	color: #0b2d71;
+	padding: 0.5em;
+    border: thin solid grey;
+	border-radius: 3px;
+	transition: 1s;
+}
+
+input[type="file"]::file-selector-button:hover {
+	background-color: #0b2d71;
+	color: #ffffff;
+	border: #0b2d71;
+}
+
+.words {
+	padding: 20px 20px;
+	border: solid;
+	border-radius: 20px;
+	border-color: black;
+	color: #0066b2;
+	box-shadow: 0px 1px 10px 1px #0b2d71;
+}
+
+.input {
+	min-height: calc(0.2em + (0.2em * 2) + 0.2em);
+    
+    padding: 30px; 
+    font-size: 0.9em;
+    font-family: Helvetica; 
+    outline: none;
+    border: 1px solid #dddddd;
+    
+    border-radius: 4px;
+    background: #f9f9f9;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+  }
+
+    .upload {
+        font-family: Helvetica; 
+        align-items: center;
+		padding: 0px 20px;
+		color: #0066b2;
+    }
+  
+    .two-col {
+      display: flex;
+      overflow: hidden;
+      //justify-content: center;
+    }
+    .two-col .words,
+    .two-col .upload {
+        width: 50%;
+    }
+    
+    .two-col .words{
+      float:right;
+    }
+    .two-col .upload{
+      float:right;
+    }
+  
+    .text-input {
+      font-family: Helvetica;
+    }

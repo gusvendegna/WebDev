@@ -1,0 +1,33 @@
+<div class = "parent">
+
+    <div class = "two-col">
+        <div class = "words">
+            <h2> leaderboard </h2>
+
+            <table>
+                <tr>
+                    <th>username</th>
+                    <th>score</th>
+                </tr>
+                <tr *ngFor="let curRow of leaderboard">
+                    <td *ngFor="let r of curRow"> {{r}} </td>
+                    
+                </tr>
+            </table>
+            
+        </div>
+        <div class = "upload">
+                <h2> {{ getItem("challenge_name") }}</h2>
+                <p>  {{ getItem("challenge_desc") }}</p>
+                <br>
+                <p> public start date: {{ getItem("public_start_date") }}</p>
+                <p> public end date: {{ getItem("public_end_date") }}</p>
+                <p> private start date: {{ getItem("private_start_date") }}</p>
+                <p> private end date: {{ getItem("private_end_date") }}</p>
+                <br>
+                <button class="button"(click) = "downloadFile()"> download sample dataset </button>
+                
+        </div>
+    </div>
+    
+</div>

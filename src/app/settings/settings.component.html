@@ -1,0 +1,192 @@
+<div *ngIf="getAdminStatus() && !isChangingAccount"> 
+    <div class = "child">
+        <div class="userPassword">
+            <h1>create new challenge</h1>    
+        </div>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p> challenge title:</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <input type="text" [(ngModel)]="challengeName" />
+            </div>
+        </div>   
+        
+        <hr>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p> answer key file (.csv):</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <input type="file" class="file-input" id="file" (change)="onKeyFileChange($event)"/>
+            </div>
+        </div>   
+        
+        <hr>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p> enter a description for this competition: </p>
+            </div>
+            <div class = "upload">
+                <br>
+                <textarea class = "text-input" name="description_text" cols="50" rows="10" [(ngModel)]="challengeDescription"></textarea>
+            </div>
+        </div> 
+
+        <hr>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p> upload sample dataset:</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <input type="file" class="file-input" id="file" (change)="onSampleFileChange($event)"/>
+            </div>
+        </div>  
+
+        <hr>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p> author name:</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <input type="text" [(ngModel)]="authorName" />
+            </div>
+        </div> 
+        
+        <hr>
+        <p> public phase</p>
+        <div class = "two-col">
+            <div class = "words">
+                <p> start: </p>
+                <input type="datetime-local" [(ngModel)]="pubStartDate"/>
+            </div>
+            <div class = "upload">
+                <p> end: </p>
+                <input type="datetime-local" [(ngModel)]="pubEndDate"/>
+                <br> <br>
+            </div>
+        </div> 
+
+        <hr>
+
+        <p> private phase</p>
+        <div class = "two-col">
+            <div class = "words">
+                <p> start: </p>
+                <input type="datetime-local" [(ngModel)]="priStartDate"/>
+            </div>
+            <div class = "upload">
+                <p> end: </p>
+                <input type="datetime-local" [(ngModel)]="priEndDate"/>
+                <br> <br>
+            </div>
+        </div>
+
+        <hr>
+
+        
+        <div class = "two-col">
+            <div class = "words">
+                <p>algorithm for this challenge</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <select name="testtype" id="testtype" [(ngModel)]="algoType">
+                    <option value="MAE">mean absolute error</option>
+                    <option value="mse_c">mean squared error</option>
+                    <option value="rmse_c">root mean squared error</option>
+                    <option value="rsq">r square</option>
+                    <option value="fscore">f-score</option>
+                    <option value="recall">tensorflow (recall)</option>
+                  </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class = "two-col">
+            <div class = "words">
+                <p>challenge submission limit</p>
+            </div>
+            <div class = "upload">
+                <br>
+                <input type="text" [(ngModel)]="challengeTimeLimit" />
+            </div>
+        </div>
+
+        <br>
+
+        <button (click) = "uploadNewChallenge()"> create challenge!</button>
+
+    </div>
+    <br>
+</div>
+
+<div class = "child" *ngIf="!isChangingAccount">
+    <div class="userPassword">
+        <h1>change password</h1>    
+    </div>
+    <body>
+        minimum password requirements: <br>
+        - 8 letters <br>
+        - 1 capital<br>
+        - 1 number<br>
+
+    </body>
+    <input class="input" type="password" placeholder='enter new password' [(ngModel)]="passwordOne">
+    <p>confirm password</p>
+    <input class="input" type="password" placeholder='enter new password again' [(ngModel)]="passwordTwo"><br><br>
+    
+    <button (click) = "changePassword()"> save changes!</button>
+</div>
+
+<div *ngIf="getAdminStatus() && !isChangingAccount"> 
+    <div class = "child">
+        <div class="userPassword">
+            <h1>admin controls</h1>    
+        </div>
+        <body>
+            be careful -  you are modifying user account data!<br> <br>
+            enter desired user's email address:
+        </body>
+        <input class="input" type="text" placeholder='user email' [(ngModel)]="targetEmail"><br><br>
+        
+        <button (click) = "getTargetUserInfo()"> change parameters</button>
+    </div>
+    <br>
+</div>
+
+<div *ngIf="isChangingAccount">
+    <div class = "child">
+        <div class="userPassword">
+            <h1>alter user parameters</h1>    
+        </div>
+        <h2> {{targetEmail}} </h2>
+        account is enabled: 
+        <input type="checkbox" [(ngModel)]="targetUserIsEnabled"><br>
+        account is has admin rights: 
+        <input type="checkbox" [(ngModel)]="targetUserIsAdmin"><br>
+        reset password to: 'Chevron!3'     
+        <input type="checkbox" [(ngModel)]="resetTargetUserPassword">
+        (make sure user changes password after!)<br>
+        <br><br>
+        <button (click) = "applyUserChanges()"> confirm changes</button>
+    </div>
+    <br>
+</div>
+
+<div *ngIf="invalidUser">
+
+    <p>no user is found with that email</p>
+
+</div>
+    

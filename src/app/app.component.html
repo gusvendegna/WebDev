@@ -1,0 +1,30 @@
+<div *ngIf="isMenuPage">
+    <div class = "two-col">
+        <img class = "logo"
+        src="/assets/CVXblueWords.svg"
+        alt="triangle with all three sides equal"
+        srcset="/assets/CVXblueWords.svg"
+        height=" 50px"
+        />
+      
+        <h1 class = "title" > chevron data science challenges </h1>
+    </div>
+    <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+    <nav class = "menu">
+      <b><a routerLink="home">home </a></b>
+      <b><a routerLink="submissions"> submissions </a></b>
+      <a routerLink="settings"> settings </a>
+      <div class = "other">
+        <p> Hi, {{ getItem('first_name')}}</p>
+        <a><select name="selectedCompetition" id="1" [(ngModel)]="current_chal" (change)="updateChallenge($event)"> 
+          <option disabled selected value>select an option</option>
+          <option *ngFor="let r of challengeList" value={{r[0]}} >{{ r[1] }}</option>
+        </select></a>
+        <a routerLink="login" (click) = "setMenuPage(false)">sign out</a>
+      </div>
+    </nav>
+
+    <h2> <script> window.location.href </script></h2>
+  </div>
+
+<router-outlet></router-outlet>

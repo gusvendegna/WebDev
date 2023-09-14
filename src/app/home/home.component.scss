@@ -1,0 +1,116 @@
+h2 {
+    font-family: Helvetica;
+    color: #0066b2;
+    
+}
+table {
+    font-family: Helvetica;
+    border: 2px solid;
+    color: white;
+    border-collapse: collapse;
+    box-shadow: 0px 1px 3px 1px #0066b2;
+    background-color: #082152;
+    border-radius: 20px;
+    border-color: #ffffff;
+    border-width: 2px;
+    overflow: hidden;
+}
+
+th {
+    padding: 5px 20px
+}
+
+td {
+    font-family: Helvetica;
+    border: 2px solid;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border-color: #b1b1b1;
+    
+}
+
+.parent {
+    position:relative;
+    top: 20vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 70%;
+}
+
+p {
+  color: #0066b2;
+}
+
+time {
+  color: #0066b2;
+  font-size: 140;
+
+}
+
+.button {
+	appearance: button;
+	backface-visibility: hidden;
+	background-color: #0b2d71;
+	border-radius: 20px;
+	border-width: 1;
+	box-shadow: 0px 1px 6px 1px #0b2d71;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	font-family: Helvetica;
+	font-size: 110%;
+	height: 40px;
+	line-height: 1;
+	margin: 0 0 0;
+	outline: none;
+	overflow: hidden;
+	padding: 0 0;
+ 	position: center;
+	text-align: center;
+	text-transform: none;
+	transform: translateZ(0);
+	transition: all .2, box-shadow  .08s ease-in;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: 100%;
+}
+    
+  .input {
+    max-width: 425px;
+    min-height: calc(0.2em + (0.2em * 2) + 0.2em);
+    
+    padding: 10px; 
+    font-size: 0.9em;
+    font-family: Helvetica; 
+    outline: none;
+    border: 1px solid #dddddd;
+    
+    border-radius: 4px;
+    background: #f9f9f9;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+  }
+
+    .upload {
+        font-family: Helvetica; 
+        padding: 0px 10px; 
+    }
+  
+    .two-col {
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+    }
+    .two-col .words,
+    .two-col .upload {}
+    
+    .two-col .words{
+      float:left;
+    }
+    .two-col .upload{
+      float:left;
+    }
+  
+    .text-input {
+      font-family: Helvetica;
+    }

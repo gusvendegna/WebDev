@@ -1,0 +1,97 @@
+.title {
+    font-size: 200%;
+}
+  
+.userPassword{
+    font-family: Helvetica;
+    position: sticky;
+    backface-visibility: hidden;
+    background-color: #0b2d71;
+    overflow: hidden;
+    box-sizing:border-box;
+    color: white;
+    font-size: 7px;
+    border-radius: 30px;
+    height: 35px;
+    padding: 0px 16px;
+}
+
+  
+.child {
+  font-family: Helvetica;
+  border: solid;
+  border-radius: 20px;
+  border-color: black;
+  color: #0066b2;
+  box-shadow: 0px 1px 10px 1px #0b2d71;
+  padding: 10px 10px;
+}
+  
+/* CSS */
+button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #0b2d71;
+  border-radius: 20px;
+  border-width: 1;
+  box-shadow: 0px 1px 6px 1px #0b2d71;
+  color: #fff;
+  cursor: pointer;
+  font-family: Helvetica;
+  font-size: 110%;
+  height: 35px;
+  line-height: 1;
+  margin: 0 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 16;
+  position: left;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 25%;
+  }
+  
+  .button:disabled {
+    cursor: default;
+  }
+  
+  .button:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 3px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+  
+  .input {
+    width: 80%;
+    max-width: 425px;
+    min-height: calc(0.2em + (0.2em * 2) + 0.2em);
+    
+    padding: 10px; 
+    font-size: 0.9em;
+    font-family: Helvetica; 
+    outline: none;
+    border: 1px solid #dddddd;
+    
+    border-radius: 4px;
+    background: #f9f9f9;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+  }
+
+  .two-col {
+    overflow: hidden;
+  }
+  .two-col .words,
+  .two-col .upload {
+      width: 30%;
+  }
+  
+  .two-col .words{
+    float:left;
+  }
+  .two-col .upload{
+    float:left;
+  }
+
+  .text-input {
+    font-family: Helvetica;
+  }
